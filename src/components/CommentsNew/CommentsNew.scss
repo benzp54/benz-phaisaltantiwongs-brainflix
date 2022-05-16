@@ -1,0 +1,27 @@
+@use '../../styles/partials/colors';
+
+.comment {
+    
+    &__new {
+        display: flex;
+        justify-content: space-between;
+        margin: 2% 4%;
+        padding-bottom: 4%;
+        border-bottom: 5px solid colors.$Silver;
+    }
+    &__add {
+        box-sizing: border-box;
+        margin-left: 4%;
+        width: 80%;
+    }
+    &__title {
+        display: block;
+        }
+};
+
+//Classes
+#comment__input {
+    font-family: inherit;
+    height: 20%;
+    width: 100%;
+};
