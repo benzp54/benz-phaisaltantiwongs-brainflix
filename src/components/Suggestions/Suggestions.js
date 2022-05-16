@@ -1,0 +1,2 @@
+import './Suggestions.scss';
+

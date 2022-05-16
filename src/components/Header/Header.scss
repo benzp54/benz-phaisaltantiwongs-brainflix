@@ -1,0 +1,27 @@
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2% 6%;
+
+    &__logo {
+        height: 6vh;
+        margin: 3%;
+    }
+    &__icon {
+        height: 100%;
+    }
+    &__search {
+        font-size: .8rem;
+        background-image: url("../../assets/Icons/search.svg");
+        background-repeat: no-repeat;
+        text-indent: 5%;
+        width: 82%;
+        border-radius: 10px;
+    }
+}
+
+.btn {
+    display: block;
+    margin-top: 2%;
+}
