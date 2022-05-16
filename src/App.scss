@@ -1,6 +1,29 @@
+/**Partials & Mixins**/
+@use '../src/styles/partials/fonts';
+@use '../src/styles/partials/colors';
+
+@mixin tablet {
+    @media screen and (min-width: $tabletBreakpoint) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media screen and (min-width: $desktopBreakpoint) {
+        @content;
+    }
+}
+
+/** Variables**/
+
+$tabletBreakpoint: 768px;
+$desktopBreakpoint: 1280px;
+
+/**Element styles**/
+
 html {
   font-family: 'AvenirNext';
   font-size: 2rem;
+  color: colors.$BrainFlix-Black;
   margin: 0;
 }
 
@@ -14,7 +37,6 @@ html {
       overflow: hidden;
   }
   &__img {
-
       object-fit: cover;
       object-position: left;
       height: 100%;
