@@ -1,0 +1,28 @@
+@use '../../styles/partials/colors';
+
+.comment {
+    
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        margin: 2% 4%;
+        padding-bottom: 4%;
+        border-bottom: 5px solid colors.$Mercury;
+    }
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-left: 4%;
+        width: 80%;
+    }
+    &__name {
+        font-weight: bold;
+    }
+    &__timestamp {
+        color: colors.$Silver;
+    }
+    &__detail {
+        display: block;
+    }
+}
