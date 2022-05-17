@@ -1,29 +1,32 @@
 import './CommentsList.scss';
-import videoData from '../../data/video-details.json';
 import avatar from '../../assets/Images/Mohan-muruge.jpg';
 
 //Add props to populate comments relative to state (active video)
 
-function commentsList () {
+function commentsList (props) {
     return (
         <section className="comment__list">
-            <div className="comment__item">
-                <div className="avatar__user">
-                    <img className="avatar__img" src={avatar} alt="User Avatar" />
-                </div>
-                <div className="comment__info">
-                    <span className="comment__name">
-                        {videoData[0].comments[0].name}
-                    </span>
-                    <span className="comment__timestamp">
-                        {videoData[0].comments[0].timestamp}
-                    </span>
-                    <p className="comment__detail">
-                        {videoData[0].comments[0].comment}
-                    </p>
-                </div>
-            </div>
-    </section>
+            {props.videoActive.comments.map((vidData) => {
+                return (
+                    <div className="comment__item">
+                        <div className="avatar__user">
+                            <img className="avatar__img" src={avatar} alt="User Avatar" />
+                        </div>
+                        <div className="comment__info">
+                            <span className="comment__name">
+                                {vidData.name}
+                            </span>
+                            <span className="comment__timestamp">
+                                {vidData.timestamp}
+                            </span>
+                            <p className="comment__detail">
+                                {vidData.comment}
+                            </p>
+                        </div>
+                    </div>
+                );
+            })}
+        </section>
     )
 }
 

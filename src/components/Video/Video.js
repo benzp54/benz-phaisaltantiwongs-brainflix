@@ -1,40 +1,37 @@
 import './Video.scss';
-import videoData from '../../data/video-details.json';
 
-//Add props to show active video relative to state
-
-const mediaPlayer = () => {
+function mediaPlayer(props) {
     return (
     <section className="video">
-    <video className="video__media" poster={videoData[0].image} controls>
-        <source src={videoData[0]}
+    <video className="video__media" poster={props.videoActive.image} controls>
+        <source src={props.videoActive.video}
             type="video" />
     </video>
     <div className="video__info">
         <h1 className="video__title">
-            {videoData[0].title}
+            {props.videoActive.title}
         </h1>
         <div className="video__details">
             <span className="video__channel">
-                By: {videoData[0].channel}
+                By {props.videoActive.channel}
             </span>
             <span className="video__date">
-                {videoData[0].timestamp}
+                {props.videoActive.timestamp}
             </span>
             <span className="video__views">
-                {videoData[0].views}
+                {props.videoActive.views}
             </span>
             <span className="video__likes">
-                {videoData[0].likes}
+                {props.videoActive.likes}
             </span>
         </div>
         <div className="video__desc">
             <p>
-                {videoData[0].description}
+                {props.videoActive.description}
             </p>
         </div>
         <p className="video__comments">
-            {videoData[0].comments.length} Comments
+            {props.videoActive.comments.length} Comments
         </p>
     </div>
     </section>
