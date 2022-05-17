@@ -8,7 +8,7 @@ function commentsList (props) {
         <section className="comment__list">
             {props.videoActive.comments.map((vidData) => {
                 return (
-                    <div className="comment__item">
+                    <div className="comment__item" key={vidData.timestamp + "c"}>
                         <div className="avatar__user">
                             <img className="avatar__img" src={avatar} alt="User Avatar" />
                         </div>
