@@ -2,13 +2,28 @@ import './Suggestions.scss';
 import videos from '../../data/videos.json';
 
 function videoList (props) {
+    let vidArr = {};
+
+    //Suggested videos excluding the active video
+    const vidsList = () => {
+        let vidTarget = props.videoActive.title;
+        let vidFilter = videos.filter((video) => {
+            return video.title !== vidTarget;
+        });
+    
+        return (
+            vidArr = vidFilter
+        );
+    }
+    vidsList();
+
     return (
         <section className="vidList">
             <p className="vidList__heading">
                 NEXT VIDEOS
             </p>
 
-            {videos.map((vid) => { 
+            {vidArr.map((vid) => { 
                 return (
                     <div className="vidList__item" key={vid.id}>
                         <div className="vidList__preview">
