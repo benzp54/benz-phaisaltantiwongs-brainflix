@@ -15,6 +15,12 @@ function videoList (props) {
             vidArr = vidFilter
         );
     }
+
+    //Test: Adding the event handler
+    // const handleClick = () => {
+    //     console.log('clicked')
+    // }
+    
     vidsList();
 
     return (
@@ -25,7 +31,9 @@ function videoList (props) {
 
             {vidArr.map((vid) => { 
                 return (
-                    <div className="vidList__item" key={vid.id}>
+                    <div className="vidList__item" key={vid.id} 
+                    // onClick={props.handleClick}
+                    >
                         <div className="vidList__preview">
                             <img className="vidList__img" src={vid.image} alt="Video Preview"></img>
                         </div>
