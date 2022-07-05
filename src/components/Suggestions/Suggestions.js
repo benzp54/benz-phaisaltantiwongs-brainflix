@@ -1,10 +1,10 @@
 import './Suggestions.scss';
 import videos from '../../data/videos.json';
 
-function videoList (props) {
-    let vidArr = {};
+//Display suggested videos excluding the active video
+function VideoList (props) {
+    let vidArr = null;
 
-    //Suggested videos excluding the active video
     const vidsList = () => {
         let vidTarget = props.videoActive.title;
         let vidFilter = videos.filter((video) => {
@@ -47,4 +47,4 @@ function videoList (props) {
     );
 };
 
-export default videoList
+export default VideoList

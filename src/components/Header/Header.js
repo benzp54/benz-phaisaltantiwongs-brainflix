@@ -1,5 +1,5 @@
 import './Header.scss';
-import {Link} from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import logo from '../../assets/Logo/BrainFlix-logo.svg';
 import avatar from '../../assets/Images/Mohan-muruge.jpg';
 
@@ -14,7 +14,9 @@ function Header() {
                         <img className="avatar__img" src={avatar} alt="User Avatar" />
                     </div>
                     <button className="btn" id="btn__upload">
-                        <Link to="/upload">UPLOAD</Link>
+                        {/* <Link to="/upload"> */}
+                        UPLOAD
+                        {/* </Link> */}
                     </button>
             </header>
     )

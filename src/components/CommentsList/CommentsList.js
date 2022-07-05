@@ -1,9 +1,9 @@
 import './CommentsList.scss';
 import avatar from '../../assets/Images/Mohan-muruge.jpg';
 
-//Add props to populate comments relative to state (active video)
+//Display comments list for active video using props
+function CommentsList (props) {
 
-function commentsList (props) {
     return (
         <section className="comment__list">
             {props.videoActive.comments.map((vidData) => {
@@ -24,10 +24,10 @@ function commentsList (props) {
                             </p>
                         </div>
                     </div>
-                );
-            })}
+                )}
+            )}
         </section>
     )
 }
 
-export default commentsList
+export default CommentsList
