@@ -1,6 +1,6 @@
 /**Partials & Mixins**/
-@use '../src/styles/partials/fonts';
-@use '../src/styles/partials/colors';
+@use '../../styles/partials/fonts';
+@use '../../styles/partials/colors';
 
 @mixin tablet {
     @media screen and (min-width: $tabletBreakpoint) {
@@ -49,6 +49,7 @@ html {
   font-size: 1rem;
   color: colors.$White;
   background-color: colors.$BrainFlix-Blue;
+  border-color: colors.$BrainFlix-Blue;
   width: 100%;
   margin-top: 2%;
   border-radius: 3px;
