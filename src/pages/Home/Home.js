@@ -40,7 +40,7 @@ class Home extends React.Component{
   componentDidUpdate = () => {
     const activeId = this.props.match.params.id;
 
-    if (activeId !== this.state.videoActive.id) {
+    if (activeId !== undefined && activeId !== this.state.videoActive.id) {
         axios
             .get(`https://project-2-api.herokuapp.com/videos/${activeId}/?api_key=${apiKey}`)
             .then((res) => {
