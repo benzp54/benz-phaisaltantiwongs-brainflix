@@ -2,7 +2,7 @@ import './CommentsList.scss';
 import avatar from '../../assets/Images/Mohan-muruge.jpg';
 
 //Display comments list for active video using props
-function CommentsList (props) {
+function CommentsList(props) {
 
     return (
         <section className="comment__list">

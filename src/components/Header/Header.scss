@@ -1,3 +1,7 @@
+/**Partials & Mixins**/
+@use '../../styles/partials/fonts';
+@use '../../styles/partials/colors';
+
 .header {
     display: flex;
     flex-wrap: wrap;
@@ -21,7 +25,20 @@
     }
 }
 
-.btn {
+.uploadLink{
     display: block;
+    text-decoration: none;
+    width: 100%;
     margin-top: 2%;
 }
+
+.btn {
+    display: block;
+    font-size: 1rem;
+    color: colors.$White;
+    background-color: colors.$BrainFlix-Blue;
+    border-color: colors.$BrainFlix-Blue;
+    width: 100%;
+    margin-top: 2%;
+    border-radius: 3px;
+  }

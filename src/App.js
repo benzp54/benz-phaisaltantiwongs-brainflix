@@ -13,15 +13,18 @@ class App extends React.Component{
   render() {
 
     return (
-      <>
-
-      {/* Header component renders on every route */}
-      <Header />
-      
+      <>    
       <BrowserRouter>
+          {/* Header component renders on every route */}
+        <Header />
+        
         <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/upload' component={Upload} />
+          <Route path="/" exact component={Home} />
+          <Route path="/upload" component={Upload} />
+          <Route path="/:id" component={Home} />
+
+          {/* Error handler to display error message in case of invalid URL*/}
+          <Route component={() => <h1>Route Not Found</h1>} />
         </Switch>
       </BrowserRouter>
       </>
