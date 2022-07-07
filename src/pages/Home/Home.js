@@ -2,7 +2,7 @@ import './Home.scss';
 import Video from '../../components/Video/Video';
 import CommentsNew from '../../components/CommentsNew/CommentsNew';
 import CommentsList from '../../components/CommentsList/CommentsList';
-import Suggestions from '../../components/Suggestions/Suggestions';
+import VideoList from '../../components/VideoList/VideoList';
 import axios from 'axios';
 import React from 'react';
 
@@ -18,8 +18,8 @@ class Home extends React.Component{
     //Default values for state are null
     this.state = {
       videoActive: null,
-      videoList: null
-    };
+      videoData: null
+    }
   };
 
     //Component lifecycle methods to update state and render videos
@@ -33,8 +33,23 @@ class Home extends React.Component{
       axios
         .get(`https://project-2-api.herokuapp.com/videos/?api_key=${apiKey}`)
         .then((res) => {
-          this.setState({ videoList: res.data })
-        });
+          this.setState({ videoData: res.data })
+        })
+  };
+
+  componentDidUpdate = () => {
+    const activeId = this.props.match.params.id;
+
+    if (activeId !== this.state.videoActive.id) {
+        axios
+            .get(`https://project-2-api.herokuapp.com/videos/${activeId}/?api_key=${apiKey}`)
+            .then((res) => {
+                this.setState({ videoActive: res.data })
+            })
+    } else {
+      console.log("componentDidUpdate");
+    }
+      
   };
 
   render() {
@@ -44,12 +59,19 @@ class Home extends React.Component{
         {/* Ternary if condition:
          -> Do not render the following components until async function componentDidMount resolves
          -> Render only after state has been updated from null*/}
-        {this.state.videoActive !== null ?
+        {this.state.videoActive !== null && this.state.videoData !== null ?
             <>
-            <Video videoActive = {this.state.videoActive}/>
+            <Video 
+              videoActive = {this.state.videoActive}
+              />
             <CommentsNew />
-            <CommentsList videoActive = {this.state.videoActive}/>
-            <Suggestions videoActive = {this.state.videoActive} />
+            <CommentsList 
+              videoActive = {this.state.videoActive}
+              />
+            <VideoList 
+              videoActive = {this.state.videoActive}
+              videoData = {this.state.videoData} 
+            />
 
             {/* Return if false: */}
             </> :
